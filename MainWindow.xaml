@@ -5,16 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Login_App"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" Background="Transparent"
-        Title="MainWindow" Height="500" Width="800">
+        Title="MainWindow" Height="600" Width="450">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="1.5*"/>
         </Grid.ColumnDefinitions>
 
         <Image Source="/Images/Add.png" Grid.Column="1" Panel.ZIndex="1" 
                MouseUp="Image_MouseUp" Style="{StaticResource ImgClose}"/>
-        <Border CornerRadius="20 0 0 20"  Grid.Column="0" MouseDown="Border_MouseDown">
+        <Border CornerRadius="20 20 20 20"  Grid.Column="0" MouseDown="Border_MouseDown">
             <Border.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                     <GradientStop Color="#3AA9AD" Offset="0"/>
@@ -30,75 +29,62 @@
                 <Ellipse Margin="250 450 0 0" Width="40" Height="40" Fill="#4eb1b6"/>
                  </Canvas>
 
-                <StackPanel VerticalAlignment="Center" Margin="0 -40 0 0">
-                    <TextBlock Text="Администратор" Style="{StaticResource titleText}"/>
-                    <!-- Место под аватарку из БД,
-                    Текст тоже хочу Менять из БД
-                    если доступна. Если нет подключения, то загрушка
-                    Возможно хочу менять -->
-                    <Image Source="Images\avatar2.png" Width="70" Height="70" Margin="0 15 0 -10"/>
-                    <!-- Хочу менять картинку из кода диинамически-->
-                    <TextBlock Style="{StaticResource normalText}" Opacity="0.8" Margin="20 30"
-                        Text="Подключение к удаленному рабочему столу сервера"/>
-                    <Button Style="{StaticResource button}" Content="Вход" Click="Button_Click"/>
+                <StackPanel VerticalAlignment="Center">
+
+                    <TextBlock Text="Школьные Тесты" 
+                           Style="{StaticResource titleText}" Foreground="#e8e8e8"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 20">
+
+                        <Button Style="{StaticResource buttonCircle}">
+                            <Image Source="/Images/Bakc.png" Width="40" Height="40"/>
+                        </Button>
+
+                        <Button Style="{StaticResource buttonCircle}">
+                            <Image Source="/Images/Add.png" Width="40" Height="40"/>
+                        </Button>
+
+                        <Button Style="{StaticResource buttonCircle}">
+                            <Image Source="/Images/Focus.png" Width="40" Height="40"/>
+                        </Button>
+                    </StackPanel>
+
+                    <TextBlock Text="Введите Имя, Фамилию и Класс учащегося для входа" Style="{StaticResource normalText}" Foreground="#e8e8e8" Margin="60 10 60 15"/>
+
+                    <Border BorderThickness="1" BorderBrush="#ffffff" Margin="70 7" CornerRadius="7">
+                        <Grid Margin="7 9">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Source="/Images/Focus.png" Width="20" Height="20"/>
+                            <TextBlock x:Name="TextLogin" Text=" Иван Иванов" 
+                               MouseDown="TextLogin_MouseDown"  Style="{StaticResource HintText}"/>
+
+                            <TextBox x:Name="TxtLogin" TextChanged="TextLogin_TextChanged" 
+                                 Style="{StaticResource textBox}"/>
+                        </Grid>
+                    </Border>
+
+                    <Border BorderThickness="1" BorderBrush="#ffffff" Margin="70 7" CornerRadius="7">
+                        <Grid Margin="7 9">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="274"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Source="/Images/Focus.png" Width="20" Height="20"/>
+                            <TextBlock x:Name="TextPassword" Text=" 7-Б" 
+                               MouseDown="TextPassword_MouseDown"  Style="{StaticResource HintText}"/>
+
+                            <TextBox x:Name="TxtPassword" TextChanged="TxtPassword_PasswordChanged" 
+                                 Style="{StaticResource textBox}"/>
+                        </Grid>
+                    </Border>
+                    <Button Style="{StaticResource button}" Content="Вход" Click="Button_Click" Margin="0 20"/>
                 </StackPanel>
             </Grid>
         </Border>
 
-        <Border Background="#ffffff" CornerRadius="0 20 20 0" Grid.Column="1" MouseDown="Border_MouseDown">
-            <StackPanel VerticalAlignment="Center">
-                <TextBlock Text="Подключение" 
-                           Style="{StaticResource titleText}" Foreground="#3ab19b"/>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 20">
-                    
-                    <Button Style="{StaticResource buttonCircle}">
-                        <Image Source="/Images/Bakc.png" Width="40" Height="40"/>
-                    </Button>
-                    
-                    <Button Style="{StaticResource buttonCircle}">
-                        <Image Source="/Images/Add.png" Width="40" Height="40"/>
-                    </Button>
-
-                    <Button Style="{StaticResource buttonCircle}">
-                        <Image Source="/Images/Focus.png" Width="40" Height="40"/>
-                    </Button>
-                </StackPanel>
-
-                <TextBlock Text="Введите имя пользователя и пароль для входа" Style="{StaticResource normalText}" Foreground="#878787" Margin="0 10 0 15"/>
-
-                <Border BorderThickness="1" BorderBrush="#acb0af" Margin="70 7" CornerRadius="7">
-                    <Grid Margin="7 9">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-
-                        <Image Source="/Images/Focus.png" Width="20" Height="20"/>
-                        <TextBlock x:Name="TextLogin" Text=" Введите имя пользователя или IP-адрес" 
-                               MouseDown="TextLogin_MouseDown"  Style="{StaticResource HintText}"/>
-
-                        <TextBox x:Name="TxtLogin" TextChanged="TextLogin_TextChanged" 
-                                 Style="{StaticResource textBox}"/>
-                    </Grid>
-                </Border>
-
-                <Border BorderThickness="1" BorderBrush="#acb0af" Margin="70 7" CornerRadius="7">
-                    <Grid Margin="7 9">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-
-                        <Image Source="/Images/Focus.png" Width="20" Height="20"/>
-                        <TextBlock x:Name="TextPassword" Text=" Введите пароль" 
-                               MouseDown="TextPassword_MouseDown"  Style="{StaticResource HintText}"/>
-
-                        <PasswordBox x:Name="TxtPassword" PasswordChanged="TxtPassword_PasswordChanged" 
-                                 Style="{StaticResource textBox}"/>
-                    </Grid>
-                </Border>
-
-            </StackPanel>
-        </Border>
     </Grid>
 </Window>

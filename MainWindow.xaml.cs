@@ -47,7 +47,7 @@ namespace Login_App
 
         private void TxtPassword_PasswordChanged(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrEmpty(TxtPassword.Password) && TxtPassword.Password.Length > 0)
+            if (!string.IsNullOrEmpty(TxtPassword.Text) && TxtPassword.Text.Length > 0)
             {
                 TextPassword.Visibility = Visibility.Collapsed;
             }
@@ -71,19 +71,22 @@ namespace Login_App
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (TxtPassword.Password == "1234" && TxtLogin.Text == "Миша-ПК")
-            {
-                Process p = new Process();
-                p.StartInfo.UseShellExecute = false;
-                p.StartInfo.FileName = "cmd.exe";
-                p.StartInfo.Arguments = "/C " + @"mstsc.exe /f C:\Users\arosl\Documents\RDP\DefaultRDP.rdp";
-                p.StartInfo.CreateNoWindow = true;
-                p.Start();
-            }
-            else 
-            {
-                MessageBox.Show("Неверное имя пользователя или пароль");
-            }
+            //if (TxtPassword.Text == "7-Б" && TxtLogin.Text == "Носик Михаил")
+            //{
+            //    MainMenu taskWindow = new MainMenu();
+            //    taskWindow.Show();
+            //}
+            //else 
+            //{
+            //    MessageBox.Show("Неверное имя пользователя или класс учащегося");
+            //}
+
+
+            this.Hide();
+            MainMenu taskWindow = new MainMenu();
+            taskWindow.Show();
+            
+            this.Close();
         }
     }
 }
