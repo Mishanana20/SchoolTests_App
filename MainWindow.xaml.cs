@@ -12,41 +12,78 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WPFAppNote.model;
-using SqlConn;
-using WPFAppNote.DBSQL;
-using System.Reflection;
+using System.Diagnostics;
 
-namespace WPFAppNote
+namespace Login_App
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
-            DBUtils.GetDBConnection();
-            SQLConnection Notes = new SQLConnection();
-            Notes.OpenConnection();
-            if (Notes.ItemList.Any())
-            { 
-                Console.WriteLine(Notes.ItemList.Count); 
-            }
-            Notes.GetAllItems();
-            foreach (var item in Notes.ItemList)
-            {
-                Console.WriteLine(item.Id);
-                Console.WriteLine(item.NoteText);
-                Console.WriteLine(item.NoteTitle);
-                Console.WriteLine(item.ColorText);
-                Console.WriteLine(item.NoteCreateDateTime);
-                Console.WriteLine(item.MenuTitle);
-            }
-
-
-            Notes.CloseConnection();
             InitializeComponent();
+        }
+
+        private void TextLogin_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            TxtLogin.Focus();
+        }
+
+        private void TextLogin_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(TxtLogin.Text) && TxtLogin.Text.Length > 0)
+            {
+                TextLogin.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                TextLogin.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void TextPassword_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            TxtPassword.Focus();
+        }
+
+        private void TxtPassword_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(TxtPassword.Password) && TxtPassword.Password.Length > 0)
+            {
+                TextPassword.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                TextPassword.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+            {
+                this.DragMove();
+            }
+        }
+        private void Image_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (TxtPassword.Password == "1234" && TxtLogin.Text == "Миша-ПК")
+            {
+                Process p = new Process();
+                p.StartInfo.UseShellExecute = false;
+                p.StartInfo.FileName = "cmd.exe";
+                p.StartInfo.Arguments = "/C " + @"mstsc.exe /f C:\Users\arosl\Documents\RDP\DefaultRDP.rdp";
+                p.StartInfo.CreateNoWindow = true;
+                p.Start();
+            }
+            else 
+            {
+                MessageBox.Show("Неверное имя пользователя или пароль");
+            }
         }
     }
 }
