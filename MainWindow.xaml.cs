@@ -1,18 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Diagnostics;
+using System.IO;
 
 namespace Login_App
 {
@@ -21,6 +10,31 @@ namespace Login_App
         public MainWindow()
         {
             InitializeComponent();
+            ReadNameFromFile();
+        }
+
+        private void ReadNameFromFile()
+        {
+            string currentPath = System.IO.Path.Combine(Directory.GetCurrentDirectory(), "Datafolder");
+            if (File.Exists(System.IO.Path.Combine(currentPath, "username.txt")))
+            {
+                TxtLogin.Text = GetString(0, System.IO.Path.Combine(currentPath, "username.txt"));
+                TxtPassword.Text = GetString(1, System.IO.Path.Combine(currentPath, "username.txt"));
+            }
+        }
+
+        public string GetString(int numberString, string filePath)
+        {
+            using (StreamReader reader = new StreamReader(filePath))
+            {
+                string result = "";
+                for (int i = 0; i <= numberString; i++)
+                {
+                    result = reader.ReadLine();
+                }
+                reader.Close();
+               return result;
+            }
         }
 
         private void TextLogin_MouseDown(object sender, MouseButtonEventArgs e)
@@ -69,24 +83,37 @@ namespace Login_App
             Application.Current.Shutdown();
         }
 
+        //если поля пустые, то мессадж бокс
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //if (TxtPassword.Text == "7-Б" && TxtLogin.Text == "Носик Михаил")
-            //{
-            //    MainMenu taskWindow = new MainMenu();
-            //    taskWindow.Show();
-            //}
-            //else 
-            //{
-            //    MessageBox.Show("Неверное имя пользователя или класс учащегося");
-            //}
+            if ((!string.IsNullOrEmpty(TxtPassword.Text) && TxtPassword.Text.Length > 0)
+                && (!string.IsNullOrEmpty(TxtLogin.Text) && TxtLogin.Text.Length > 0))
+            {
+                string currentPath = Directory.GetCurrentDirectory();
+                if (!Directory.Exists(System.IO.Path.Combine(currentPath, "Datafolder")))
+                    Directory.CreateDirectory(System.IO.Path.Combine(currentPath, "Datafolder"));
 
+                currentPath = System.IO.Path.Combine(currentPath, "Datafolder");
+               
+                    using (StreamWriter writer = new StreamWriter(System.IO.Path.Combine(currentPath, "username.txt"), false))
+                    {
+                        writer.WriteLine(TxtLogin.Text);
+                        writer.WriteLine(TxtPassword.Text);
+                        writer.Close();
+                    }
+                
 
-            this.Hide();
-            MainMenu taskWindow = new MainMenu();
-            taskWindow.Show();
-            
-            this.Close();
+                this.Hide();
+                MainMenu taskWindow = new MainMenu();
+                taskWindow.Show();
+
+                this.Close();
+            }
+            else
+            {
+                Warning warning = new Warning("Введите Имя, Фамилию и Класс учащегося");
+                warning.Show();
+            }
         }
     }
 }

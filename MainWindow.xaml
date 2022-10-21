@@ -11,7 +11,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Image Source="/Images/Add.png" Grid.Column="1" Panel.ZIndex="1" 
+        <Image Source="/Images/Close.png" Grid.Column="1" Panel.ZIndex="1" 
                MouseUp="Image_MouseUp" Style="{StaticResource ImgClose}"/>
         <Border CornerRadius="20 20 20 20"  Grid.Column="0" MouseDown="Border_MouseDown">
             <Border.Background>

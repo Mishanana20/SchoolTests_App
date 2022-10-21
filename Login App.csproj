@@ -12,6 +12,7 @@
     <None Remove="Images\Add.png" />
     <None Remove="Images\avatar2.png" />
     <None Remove="Images\Bakc.png" />
+    <None Remove="Images\Close.png" />
     <None Remove="Images\Focus.png" />
     <None Remove="Images\LoadScreen.jpg" />
   </ItemGroup>
@@ -25,6 +26,9 @@
     </Resource>
     <Resource Include="Images\Bakc.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Close.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\Focus.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
