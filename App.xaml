@@ -119,7 +119,7 @@
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="RenderTransform">
                         <Setter.Value>
-                            <ScaleTransform ScaleX="1.1" ScaleY="1.1"/>
+                            <ScaleTransform ScaleX="1.05" ScaleY="1.05"/>
                         </Setter.Value>
                     </Setter>
                 </Trigger>
