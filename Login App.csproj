@@ -13,8 +13,11 @@
     <None Remove="Images\avatar2.png" />
     <None Remove="Images\Bakc.png" />
     <None Remove="Images\Close.png" />
+    <None Remove="Images\CloseMenu.png" />
     <None Remove="Images\Focus.png" />
     <None Remove="Images\LoadScreen.jpg" />
+    <None Remove="Images\Menu.png" />
+    <None Remove="Images\OpenMenu.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -30,8 +33,17 @@
     <Resource Include="Images\Close.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Images\CloseMenu.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\Focus.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Menu.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\OpenMenu.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
 

@@ -6,20 +6,114 @@
         xmlns:local="clr-namespace:Login_App"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" Background="Transparent"
         Title="MainWindow" Height="600" Width="950">
+
+    <Window.Resources>
+        <ControlTemplate x:Key="SlideMenuBtn" TargetType="Button">
+            <Grid Name="Btn" Height="50" Margin="10 20 0 20">
+                <Border CornerRadius="50 50 50 20">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="{DynamicResource ResourceKey=Img}"
+                               VerticalAlignment="Center" HorizontalAlignment="Left"
+                               Height="45" Width="45" Stretch="Fill"
+                               Margin="0 0 0 0"/>
+                        <Label 
+                            Content="{TemplateBinding Content}" 
+                                    Style="{StaticResource titleLabel}" HorizontalAlignment="Right"
+                        />
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </ControlTemplate>
+    </Window.Resources>
     <Grid>
-        <Border CornerRadius="20 20 20 20"  Grid.Column="0" MouseDown="Border_MouseDown">
+        <Border CornerRadius="20 20 20 20"  MouseDown="Border_MouseDown">
             <Border.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                     <GradientStop Color="#3AA9AD" Offset="0"/>
                     <GradientStop Color="#3AADA1" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid x:Name="SlideMenu" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left">
+                    <Grid.Style>
+                        <Style TargetType="Grid">
+                            <Setter Property="Width" Value="300"/>
+                            <Style.Triggers>
+                                <DataTrigger
+                                 Binding ="{Binding Path = IsChecked, ElementName =OpenCloseSlideMenuBtn }" Value ="true">
+                                    <Setter Property="Width" Value="62"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Grid.Style>
+                    <Border Background="AliceBlue" Padding="0 60 0 0"
+                            CornerRadius="20 20 0 20" BorderThickness="1,0,1,1" Opacity="0.6">
+                        <StackPanel Orientation="Vertical" >
+
+                            <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Content="Выбор теста">
+                                <Button.Resources>
+                                    <ImageSource x:Key="Img">/Images/Menu.png</ImageSource>
+                                </Button.Resources>
+                            </Button>
+
+                            <Button Template="{StaticResource ResourceKey=SlideMenuBtn}"
+                                    Content = "Список вопросов">
+                                <Button.Resources>
+                                    <ImageSource x:Key="Img">/Images/Menu.png</ImageSource>
+                                </Button.Resources>
+                            </Button>
+
+                            <Button Template="{StaticResource ResourceKey=SlideMenuBtn}"
+                                    Content = "Результаты">
+                                <Button.Resources>
+                                    <ImageSource x:Key="Img">/Images/Menu.png</ImageSource>
+                                </Button.Resources>
+                            </Button>
+
+                            <Button Template="{StaticResource ResourceKey=SlideMenuBtn}"
+                                    Content = "Настройки">
+                                <Button.Resources>
+                                    <ImageSource x:Key="Img">/Images/Menu.png</ImageSource>
+                                </Button.Resources>
+                            </Button>
+
+                        </StackPanel>
+                    </Border>
+                    <ToggleButton Focusable="False" x:Name="OpenCloseSlideMenuBtn" Height="20" Width="20"
+                                      VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                                      Margin="25,0,0,25">
+                        <ToggleButton.Template>
+                            <ControlTemplate>
+                                <Image>
+                                    <Image.Style>
+                                        <Style TargetType="Image">
+                                            <Setter Property="Source" Value="/Images/OpenMenu.png"/>
+                                            <Style.Triggers>
+                                                <DataTrigger
+                                                 Binding ="{Binding RelativeSource={RelativeSource 
+                                                 Mode=FindAncestor,
+                                                 AncestorType={x:Type ToggleButton}},
+                                                 Path=IsChecked}" Value ="true">
+                                                 <Setter Property="Source" Value="/Images/CloseMenu.png"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Image.Style>
+                                </Image>
+                            </ControlTemplate>
+                        </ToggleButton.Template>
+                    </ToggleButton>
+                </Grid>
+            </Grid>
         </Border>
-
-        <StackPanel VerticalAlignment="Center">
-
-            <TextBlock Text="Школьные Тесты" 
-                           Style="{StaticResource titleText}" Foreground="#e8e8e8"/>
-        </StackPanel>
     </Grid>
 </Window>
