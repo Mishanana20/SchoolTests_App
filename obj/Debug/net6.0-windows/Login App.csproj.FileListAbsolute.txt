@@ -46,3 +46,9 @@ C:\Users\Home\source\repos\WPF Application\School tests\obj\Debug\net6.0-windows
 C:\Users\Home\source\repos\WPF Application\School tests\obj\Debug\net6.0-windows\MainMenu.baml
 C:\Users\Home\source\repos\WPF Application\School tests\obj\Debug\net6.0-windows\Warning.g.cs
 C:\Users\Home\source\repos\WPF Application\School tests\obj\Debug\net6.0-windows\Warning.baml
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Debug\net6.0-windows\Frames\AllTests_Frame.g.cs
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Debug\net6.0-windows\Frames\AllTests_Frame.baml
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Debug\net6.0-windows\Frames\StartFrame.g.cs
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Debug\net6.0-windows\Frames\StartFrame.baml
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Debug\net6.0-windows\Frames\Test.g.cs
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Debug\net6.0-windows\Frames\Test.baml

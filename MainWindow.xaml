@@ -23,11 +23,11 @@
 
             <Grid>
                 <Canvas>
-                 <Polygon Points="0,20 230,140 0,270" Fill="#4eb1b6"/>
-                <Polygon Points="100,400 200,370 180,470" Fill="#4eb1b6"/>
-                <Ellipse Margin="50 400 0 0" Width="20" Height="20" Fill="#4eb1b6"/>
-                <Ellipse Margin="250 450 0 0" Width="40" Height="40" Fill="#4eb1b6"/>
-                 </Canvas>
+                    <Polygon Points="0,20 230,140 0,270" Fill="#4eb1b6"/>
+                    <Polygon Points="100,400 200,370 180,470" Fill="#4eb1b6"/>
+                    <Ellipse Margin="50 400 0 0" Width="20" Height="20" Fill="#4eb1b6"/>
+                    <Ellipse Margin="250 450 0 0" Width="40" Height="40" Fill="#4eb1b6"/>
+                </Canvas>
 
                 <StackPanel VerticalAlignment="Center">
 
@@ -50,7 +50,7 @@
 
                     <TextBlock Text="Введите Имя, Фамилию и Класс учащегося для входа" Style="{StaticResource normalText}" Foreground="#e8e8e8" Margin="60 10 60 15"/>
 
-                    <Border BorderThickness="1" BorderBrush="#ffffff" Margin="70 7" CornerRadius="7">
+                    <Border BorderThickness="1" BorderBrush="#ffffff" Margin="70 7" CornerRadius="7"  Width="300">
                         <Grid Margin="7 9">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"/>
@@ -66,11 +66,11 @@
                         </Grid>
                     </Border>
 
-                    <Border BorderThickness="1" BorderBrush="#ffffff" Margin="70 7" CornerRadius="7">
+                    <Border BorderThickness="1" BorderBrush="#ffffff" Margin="70 7" CornerRadius="7" Width="300">
                         <Grid Margin="7 9">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="274"/>
+                                <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
 
                             <Image Source="/Images/Focus.png" Width="20" Height="20"/>

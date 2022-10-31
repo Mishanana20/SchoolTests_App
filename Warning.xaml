@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Login_App"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" Background="Transparent"
-        Title="MainWindow" Height="250" Width="350">
+        Title="MainWindow" Height="250" Width="350"
+        ResizeMode="NoResize">
     <Grid>
         <Image Source="/Images/Close.png"  Panel.ZIndex="2" 
                MouseUp="Image_MouseUp"  Style="{StaticResource ImgClose}"  Margin="0 25 25 0"/>

@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Login_App"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" Background="Transparent"
-        Title="MainWindow" Height="600" Width="950">
-
+        Title="MainWindow" Height="600" Width="950"
+        MaxWidth="950">
     <Window.Resources>
         <ControlTemplate x:Key="SlideMenuBtn" TargetType="Button">
             <Grid Name="Btn" Height="50" Margin="0 20 0 20">
@@ -36,15 +36,16 @@
             </Border.Background>
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="300"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="65"/>
+                    <ColumnDefinition Width="235"/>
+                    <ColumnDefinition Width="650"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="0"/>
+                    <RowDefinition Height="5"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <Grid x:Name="SlideMenu" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left">
+                <Grid x:Name="SlideMenu" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" Panel.ZIndex="1">
                     <Grid.Style>
                         <Style TargetType="Grid">
                             <Setter Property="Width" Value="300"/>
@@ -57,17 +58,20 @@
                         </Style>
                     </Grid.Style>
                     <Border Background="AliceBlue" Padding="0 60 0 0"
-                            CornerRadius="20 20 0 20" BorderThickness="1,0,1,1" Opacity="0.6">
+                            CornerRadius="10 20 0 20"  Opacity="1">
                         <StackPanel Orientation="Vertical" >
 
-                            <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" Content="Выбор теста">
+                            <Button Template="{StaticResource ResourceKey=SlideMenuBtn}" 
+                                    Content="Выбор теста"
+                                     Click="ButtonFrameAllTests_Click">
                                 <Button.Resources>
                                     <ImageSource x:Key="Img">/Images/Menu.png</ImageSource>
                                 </Button.Resources>
                             </Button>
 
                             <Button Template="{StaticResource ResourceKey=SlideMenuBtn}"
-                                    Content = "Список вопросов">
+                                    Content = "Список вопросов"
+                                     Click="ButtonOpenTest_Click">
                                 <Button.Resources>
                                     <ImageSource x:Key="Img">/Images/Menu.png</ImageSource>
                                 </Button.Resources>
@@ -114,7 +118,11 @@
                         </ToggleButton.Template>
                     </ToggleButton>
                 </Grid>
-            </Grid>
+
+                <Grid x:Name="MainFrame" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="1" Panel.ZIndex="0" >
+                    <Frame NavigationUIVisibility="Hidden" Name="CurFrame" Content="Frame"/>
+                </Grid>
+             </Grid>
         </Border>
     </Grid>
 </Window>

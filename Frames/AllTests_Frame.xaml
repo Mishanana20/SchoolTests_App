@@ -1,0 +1,69 @@
+﻿<Page x:Class="Login_App.Frames.AllTests_Frame"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Login_App.Frames"
+          mc:Ignorable="d" 
+          d:DesignHeight="600" d:DesignWidth="650"
+      Title="AllTests_Frame">
+
+    <Grid>
+        <Border CornerRadius="20 20 20 0">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#3AADA1" Offset="0"/>
+                    <GradientStop Color="#3AADA1" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+
+
+            <StackPanel  Height="Auto"  Width="Auto" HorizontalAlignment="Stretch">
+                <ScrollViewer Name="scroll" CanContentScroll="True" 
+                                
+                              Height="{Binding RelativeSource={RelativeSource FindAncestor, 
+                                AncestorType={x:Type StackPanel}},Path=ActualHeight}"
+                              VerticalScrollBarVisibility="Hidden">
+                    <ItemsControl x:Name="lbName">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Border BorderThickness="1" BorderBrush="#ffffff" Margin="20,15" CornerRadius="7">
+                                    <Grid Margin="7 9">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="40"/>
+                                            <RowDefinition Height="30"/>
+                                            <RowDefinition Height="50"/>
+                                        </Grid.RowDefinitions>
+
+                                        <TextBlock Text="{Binding name}"  Grid.Row="0"
+                                        Style="{StaticResource titleText}" Foreground="#e8e8e8"/>
+
+                                        <TextBlock Text="{Binding text}" Grid.Row="1" 
+                                         Style="{StaticResource normalText}" Foreground="#e8e8e8"/>
+
+                                        <Button Style="{StaticResource button}" Content="Начать тест" Grid.Row="2" VerticalAlignment="Bottom"/>
+                                        <!--<TextBox   Grid.Row="1" 
+                                        Style="{StaticResource textBox}"/>-->
+                                    </Grid>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+            </StackPanel>
+
+            <!--<StackPanel Height="500">
+                <ListBox x:Name="lbName" Height="100">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding name}"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>-->
+        </Border>
+    </Grid>
+</Page>
