@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="ConfirmationWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Frames\AllTests_Frame.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -24,6 +27,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="ConfirmationWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Frames\AllTests_Frame.xaml">
       <SubType>Designer</SubType>
     </Page>

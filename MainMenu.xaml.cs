@@ -24,7 +24,7 @@ namespace Login_App
         public MainMenu()       
         {
             InitializeComponent();      
-            CurFrame.Navigate(new Frames.StartFrame());
+            CurFrame.Navigate(new Frames.AllTests_Frame());
         }
 
         [DllImport("user32.dll")]
@@ -55,8 +55,7 @@ namespace Login_App
 
         private void ButtonFrameAllTests_Click(object sender, RoutedEventArgs e)
         {
-            CurFrame.Navigate(new Frames.AllTests_Frame());
-        }
+            CurFrame.Navigate(new Frames.AllTests_Frame());        }
 
         private void ButtonOpenTest_Click(object sender, RoutedEventArgs e)
         {

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Home\source\repos\WPF Application\School tests\App.xaml
-6-1229738406
+7-770481685
 
-11-1830958319
-194618410957
-Frames\AllTests_Frame.xaml;Frames\StartFrame.xaml;Frames\Test.xaml;MainMenu.xaml;MainWindow.xaml;Warning.xaml;
+151817253607
+199879938564
+ConfirmationWindow.xaml;Frames\AllTests_Frame.xaml;Frames\StartFrame.xaml;Frames\Test.xaml;MainMenu.xaml;MainWindow.xaml;Warning.xaml;
 images\loadscreen.jpg
 False
 

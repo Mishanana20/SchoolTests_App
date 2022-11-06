@@ -34,20 +34,29 @@ namespace Login_App.Frames
 
         public void TestAddElements_Loaded(object sender, RoutedEventArgs e)
         {
-            TestName bio = new TestName() { name = "First Test", text = "Description for the Ferst Text"};
-            bio.name = "First Test"; bio.text = "Description for the Ferst Text";
+            TestName bio = new TestName() { Name = "First Test", Text = "Description for the Ferst Text"};
+            bio.Name = "First Test"; bio.Text = "Description for the Ferst Text";
             testNames.Add(bio);
-            testNames.Add(new TestName { name = "Биология", text = "Первый тест по биологии" });
-            testNames.Add(new TestName { name = "География", text = "Контрольная до 25-11-22" });
-            testNames.Add(new TestName { name = "Математика", text = "Тест для повторения основ" });
-            testNames.Add(new TestName { name = "Биология", text = "Первый тест по биологии" });
-            testNames.Add(new TestName { name = "География", text = "Контрольная до 25-11-22" });
-            testNames.Add(new TestName { name = "Математика", text = "Тест для повторения основ" });
-            testNames.Add(new TestName { name = "Биология", text = "Первый тест по биологии" });
-            testNames.Add(new TestName { name = "География", text = "Контрольная до 25-11-22" });
-            testNames.Add(new TestName { name = "Математика", text = "Тест для повторения основ" });
+            testNames.Add(new TestName { Name = "Биология", Text = "Первый тест по биологии" });
+            testNames.Add(new TestName { Name = "География", Text = "Контрольная до 25-11-22" });
+            testNames.Add(new TestName { Name = "Математика", Text = "Тест для повторения основ" });
+            testNames.Add(new TestName { Name = "Биология", Text = "Первый тест по биологии" });
+            testNames.Add(new TestName { Name = "География", Text = "Контрольная до 25-11-22" });
+            testNames.Add(new TestName { Name = "Математика", Text = "Тест для повторения основ" });
+            testNames.Add(new TestName { Name = "Биология", Text = "Первый тест по биологии" });
+            testNames.Add(new TestName { Name = "География", Text = "Контрольная до 25-11-22" });
+            testNames.Add(new TestName { Name = "Математика", Text = "Тест для повторения основ" });
             lbName.ItemsSource = testNames;
             //lbName.ItemsSource = new object[] { bio };
+        }
+
+        public void StartTest_Click(object sender, RoutedEventArgs e)
+        {
+            var person = (TestName)((Button)sender).Tag;
+
+            //Warning warning = new Warning($"{person.name} {person.text}");
+            ConfirmationWindow warning = new ConfirmationWindow($"{person.Name}");
+            warning.Show();
         }
     }
 }

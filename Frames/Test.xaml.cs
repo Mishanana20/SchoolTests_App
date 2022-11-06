@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Login_App.model;
+using Login_App.DataBase;
 
 namespace Login_App.Frames
 {
@@ -20,8 +22,10 @@ namespace Login_App.Frames
     /// </summary>
     public partial class Test : Page
     {
+        List<Question> questions = new List<Question>();
         public Test()
         {
+            questions = Connection.TestConnectionToDatabase();
             InitializeComponent();
         }
     }

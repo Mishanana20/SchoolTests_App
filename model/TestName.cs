@@ -8,8 +8,8 @@ namespace Login_App.model
 {
     public class TestName
     {
-        public string name { get; set; }
-        public string text { get; set; }
+        public string Name { get; set; }
+        public string Text { get; set; }
 
     }
 }

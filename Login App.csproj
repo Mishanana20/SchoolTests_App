@@ -21,6 +21,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="6.0.10" />
+    <PackageReference Include="System.Data.SQLite.Core" Version="1.0.116" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Images\Add.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>

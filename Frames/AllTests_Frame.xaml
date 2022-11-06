@@ -33,20 +33,21 @@
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
                                         <Grid.RowDefinitions>
-                                            <RowDefinition Height="40"/>
-                                            <RowDefinition Height="30"/>
                                             <RowDefinition Height="50"/>
+                                            <RowDefinition Height="30"/>
+                                            <RowDefinition Height="60"/>
                                         </Grid.RowDefinitions>
 
-                                        <TextBlock Text="{Binding name}"  Grid.Row="0"
+                                        <TextBlock x:Name="TestNameBlock" Text="{Binding Name}"  Grid.Row="0"
                                         Style="{StaticResource titleText}" Foreground="#e8e8e8"/>
 
-                                        <TextBlock Text="{Binding text}" Grid.Row="1" 
+                                        <TextBlock Text="{Binding Text}" Grid.Row="1" 
                                          Style="{StaticResource normalText}" Foreground="#e8e8e8"/>
 
-                                        <Button Style="{StaticResource button}" Content="Начать тест" Grid.Row="2" VerticalAlignment="Bottom"/>
-                                        <!--<TextBox   Grid.Row="1" 
-                                        Style="{StaticResource textBox}"/>-->
+                                        <Button Style="{StaticResource button}" Content="Начать тест" Grid.Row="2" 
+                                               Click="StartTest_Click" Tag="{Binding}"
+                                                VerticalAlignment="Bottom" FontSize ="22"/>
+
                                     </Grid>
                                 </Border>
                             </DataTemplate>
@@ -54,16 +55,6 @@
                     </ItemsControl>
                 </ScrollViewer>
             </StackPanel>
-
-            <!--<StackPanel Height="500">
-                <ListBox x:Name="lbName" Height="100">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding name}"/>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
-            </StackPanel>-->
         </Border>
     </Grid>
 </Page>

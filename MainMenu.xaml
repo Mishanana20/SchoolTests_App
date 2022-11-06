@@ -51,7 +51,7 @@
                             <Setter Property="Width" Value="300"/>
                             <Style.Triggers>
                                 <DataTrigger
-                                 Binding ="{Binding Path = IsChecked, ElementName =OpenCloseSlideMenuBtn }" Value ="true">
+                                 Binding ="{Binding Path = IsChecked, ElementName =OpenCloseSlideMenuBtn }" Value ="false">
                                     <Setter Property="Width" Value="65"/>
                                 </DataTrigger>
                             </Style.Triggers>
