@@ -59,7 +59,7 @@ namespace Login_App
 
         private void ButtonOpenTest_Click(object sender, RoutedEventArgs e)
         {
-            CurFrame.Navigate(new Frames.Test());
+            CurFrame.Navigate(new Frames.Test("usersdata"));
         }
     }
 }

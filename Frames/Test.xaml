@@ -4,10 +4,10 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Login_App.Frames"
+      xmlns:model ="clr-namespace:Login_App.model"
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="650"
-      Title="Test">
-
+      Title="Test" Name="testFrame">
     <Grid>
         <Border CornerRadius="20 20 20 0">
             <Border.Background>
@@ -16,8 +16,20 @@
                     <GradientStop Color="#3AADA1" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
-            <StackPanel Margin="0,0,0,0">
-                <Border BorderThickness="1" BorderBrush="#ffffff" Margin="20,25" CornerRadius="7">
+
+            <StackPanel HorizontalAlignment="Stretch"  Margin="0 0 15 0">
+               
+                <ScrollViewer Name="scroll" CanContentScroll="True"  
+                              Height="{Binding RelativeSource={RelativeSource FindAncestor, 
+                                AncestorType={x:Type Grid}},Path=ActualHeight}"
+                              VerticalScrollBarVisibility="Hidden">
+                    <Grid   Height="Auto"  Width="Auto" Margin="0 0 0 20">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="150"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                    <Border BorderThickness="1" BorderBrush="#ffffff" Margin="20,25" CornerRadius="7">
                     <Grid Margin="7 9">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto"/>
@@ -28,91 +40,50 @@
                         </Grid.RowDefinitions>
 
 
-                        <Image Source="/Images/Focus.png" Width="20" Height="20"/>
-                        <TextBlock x:Name="TextLoginS" Text="Какой-то вопрос номер один" 
-                                 Style="{StaticResource HintText}"/>
+                        <TextBlock x:Name="TextLoginS" Text="{Binding QuestionText}" 
+                                 Style="{StaticResource HintText}" FontSize="22"/>
 
                         <TextBox x:Name="TxtLoginS" 
                                  Style="{StaticResource textBox}"/>
                     </Grid>
                 </Border>
-                <Border BorderThickness="1" BorderBrush="#ffffff" Margin="20,100, 20, 0" CornerRadius="7">
-                    <Grid Margin="7 9">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="50"/>
-                        </Grid.RowDefinitions>
+                
+                    <ItemsControl x:Name="AnswerList" Grid.Row="1">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Border BorderThickness="1" BorderBrush="#ffffff" Margin="20,30, 20, 0" CornerRadius="7">
+                                    <Grid Margin="7 9">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="50"/>
+                                        </Grid.RowDefinitions>
 
 
-                        <Image Source="/Images/Focus.png" Width="20" Height="20"/>
-                        <TextBlock x:Name="TextLogin" Text=" Первый вариант ответа" 
-                                 Style="{StaticResource HintText}"/>
+                                            <RadioButton GroupName="isTrueGroup" VerticalAlignment="Center" 
+                                                         IsChecked="False" Grid.Row="0" Tag="{Binding}"
+                                                         Checked="isTrueGroup_Checked"/>
+                                            <TextBlock x:Name="TextLogin" Text="{Binding AnswerText}" 
+                                 Style="{StaticResource HintText}" FontSize="22"/>
 
-                        <TextBox x:Name="TxtLogin" 
+                                        <TextBox x:Name="TxtLogin" 
                                  Style="{StaticResource textBox}"/>
+                                    </Grid>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                        <Button Style="{StaticResource button}" Content="Следующий" Grid.Row="2" 
+                                               Click="NextQuestion_Click" Tag="{Binding}" HorizontalAlignment="Right"
+                                                VerticalAlignment="Bottom" FontSize ="17"
+                                Margin="0 20 10 0"  
+                                Width="135"/>
                     </Grid>
-                </Border>
-                <Border BorderThickness="1" BorderBrush="#ffffff" Margin="20,7" CornerRadius="7">
-                    <Grid Margin="7 9">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="50"/>
-                        </Grid.RowDefinitions>
-
-
-                        <Image Source="/Images/Focus.png" Width="20" Height="20"/>
-                        <TextBlock x:Name="TextLogin1" Text=" Второй вариант ответа" 
-                                 Style="{StaticResource HintText}"/>
-
-                        <TextBox x:Name="TxtLogin1" 
-                                 Style="{StaticResource textBox}"/>
-                    </Grid>
-                </Border>
-                <Border BorderThickness="1" BorderBrush="#ffffff" Margin="20,7" CornerRadius="7">
-                    <Grid Margin="7 9">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="50"/>
-                        </Grid.RowDefinitions>
-
-
-                        <Image Source="/Images/Focus.png" Width="20" Height="20"/>
-                        <TextBlock x:Name="TextLogin2" Text=" Ответ на вопрос под номером три"  
-                                 Style="{StaticResource HintText}"/>
-
-                        <TextBox x:Name="TxtLogin2"  
-                                 Style="{StaticResource textBox}"/>
-                    </Grid>
-                </Border>
-                <Border BorderThickness="1" BorderBrush="#ffffff" Margin="20,7" CornerRadius="7">
-                    <Grid Margin="7 9">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="50"/>
-                        </Grid.RowDefinitions>
-
-
-                        <Image Source="/Images/Focus.png" Width="20" Height="20"/>
-                        <TextBlock x:Name="TextLogin3" Text=" Четвертый вариант" 
-                                 Style="{StaticResource HintText}"/>
-
-                        <TextBox x:Name="TxtLogin3" 
-                                 Style="{StaticResource textBox}"/>
-                    </Grid>
-                </Border>
+                </ScrollViewer>
             </StackPanel>
         </Border>
     </Grid>
 </Page>
+

@@ -10,15 +10,34 @@ namespace Login_App.model
 {
     public class Answer : INotifyPropertyChanged 
     {
-        public string AnswerText { get; set; }
-        public bool IsTrue { get; set; }
+        private string answerText;
+        private bool isTrue;
+
+        public string AnswerText 
+        {
+            get { return answerText; }
+            set
+            {
+                answerText = value;
+                OnPropertyChanged("AnswerText");
+            }
+        }
+        public bool IsTrue 
+        {
+            get { return isTrue; }
+            set
+            {
+                isTrue = value;
+                OnPropertyChanged("IsTrue");
+            }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         public Answer(string answerText, bool isTrue)
         {
-            this.AnswerText = answerText;
-            this.IsTrue = isTrue;
+            this.answerText = answerText;
+            this.isTrue = isTrue;
         }
 
         public void OnPropertyChanged([CallerMemberName] string prop = "")

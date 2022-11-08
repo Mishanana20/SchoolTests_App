@@ -11,11 +11,11 @@ namespace Login_App.DataBase
 {
     public class Connection
     {
-        public static List<Question> TestConnectionToDatabase()
+        public static List<Question> TestConnectionToDatabase(string databaseName)
         {
             List<Question> questions = new List<Question>();
 
-            string connectionString = "Data Source=Datafolder/usersdata.db;Cache=Shared;Mode=ReadWriteCreate;";
+            string connectionString = $"Data Source=Datafolder/{databaseName}.db;Cache=Shared;Mode=ReadWriteCreate;";
             SQLiteConnection connection = new SQLiteConnection(connectionString);
             //connection.Open();
             //connection.Close();

@@ -10,19 +10,56 @@ namespace Login_App.model
 {
     public class Question : INotifyPropertyChanged
     {
-        public int Id { get; set; }
-        public int NumberQuestion { get; set; }
-        public string QuestionText { get; set; }
-        public List<Answer> AnswerList { get; set; } = new List<Answer>();
+        private int id;
+        private int numberQuestion;
+        private string questionText;
+        private List<Answer> answerList;
+
+        public int Id
+        {
+            get { return id; }
+            set
+            {
+                id = value;
+                OnPropertyChanged("Id");
+            }
+        }
+        public int NumberQuestion
+        {
+            get { return numberQuestion; }
+            set
+            {
+                numberQuestion = value;
+                OnPropertyChanged("NumberQuestion");
+            }
+        }
+        public string QuestionText
+        {
+            get { return questionText; }
+            set
+            {
+                questionText = value;
+                OnPropertyChanged("QuestionText");
+            }
+        }
+        public List<Answer> AnswerList
+        {
+            get { return answerList; }
+            set
+            {
+                answerList = value;
+                OnPropertyChanged("AnswerList");
+            }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         public Question(int id, int numberQuestion, string questionText)
         {
-            this.Id = id;
-            this.NumberQuestion = numberQuestion;
-            this.QuestionText = questionText;
-            this.AnswerList = new List<Answer>();
+            this.id = id;
+            this.numberQuestion = numberQuestion;
+            this.questionText = questionText;
+            this.answerList = new List<Answer>();
         }
 
         public void OnPropertyChanged([CallerMemberName] string prop = "")

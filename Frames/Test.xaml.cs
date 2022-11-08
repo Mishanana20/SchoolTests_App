@@ -23,10 +23,42 @@ namespace Login_App.Frames
     public partial class Test : Page
     {
         List<Question> questions = new List<Question>();
-        public Test()
+        Question currentQuestion;
+        List<Answer> answers = new List<Answer>();
+        bool isTrueCheked = false;
+        string dataBaseName = "usersdata";
+        public Test(string databaseName)
         {
-            questions = Connection.TestConnectionToDatabase();
+            dataBaseName = databaseName;
+            questions = Connection.TestConnectionToDatabase(dataBaseName);
+            currentQuestion = questions[0];
+            answers = questions[0].AnswerList;
+            this.DataContext = currentQuestion;
             InitializeComponent();
+            Loaded += TestAddAnswers_Loaded;
+
+        }
+        public void TestAddAnswers_Loaded(object sender, RoutedEventArgs e)
+        {
+            AnswerList.ItemsSource= answers;
+        }
+
+        public void NextQuestion_Click(object sender, RoutedEventArgs e)
+        {
+            Warning warning = new Warning($"{isTrueCheked}");
+            warning.Show();
+            isTrueCheked = false;
+        }
+
+        private void isTrueGroup_Checked(object sender, RoutedEventArgs e)
+        {
+            var answer = (Answer)((RadioButton)sender).Tag;
+            RadioButton pressed = (RadioButton)sender;
+            isTrueCheked = answer.IsTrue;
         }
     }
+
+
+
+
 }

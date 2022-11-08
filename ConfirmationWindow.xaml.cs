@@ -29,10 +29,18 @@ namespace Login_App
         }
 
 
+
+        public event EventHandler ButtonClicked;
         private void ButtonYes_Click(object sender, RoutedEventArgs e)
         {
+            if (ButtonClicked != null)
+            {
+                ButtonClicked(this, EventArgs.Empty);
+            }
             this.Close();
         }
+
+
         private void ButtonNo_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
