@@ -27,27 +27,53 @@ namespace Login_App.Frames
         List<Answer> answers = new List<Answer>();
         bool isTrueCheked = false;
         string dataBaseName = "usersdata";
+        int currentNumber = 0;
+        ViewModel viewModel = new ViewModel();
+        int maxNubmer;
+        int currentBall = 0;
+
+
         public Test(string databaseName)
         {
+          
             dataBaseName = databaseName;
             questions = Connection.TestConnectionToDatabase(dataBaseName);
-            currentQuestion = questions[0];
-            answers = questions[0].AnswerList;
-            this.DataContext = currentQuestion;
+            maxNubmer = questions.Count();
+            currentQuestion = questions[currentNumber];
+            answers = questions[currentNumber].AnswerList;
+            this.DataContext = viewModel;
             InitializeComponent();
             Loaded += TestAddAnswers_Loaded;
 
         }
         public void TestAddAnswers_Loaded(object sender, RoutedEventArgs e)
         {
-            AnswerList.ItemsSource= answers;
+            AnswerList.ItemsSource = answers;
         }
 
         public void NextQuestion_Click(object sender, RoutedEventArgs e)
         {
-            Warning warning = new Warning($"{isTrueCheked}");
-            warning.Show();
-            isTrueCheked = false;
+            //Warning warning = new Warning($"{isTrueCheked}");
+            //warning.Show();
+            if (currentNumber < maxNubmer -1)
+            {
+                if(isTrueCheked)
+                {
+                    currentBall++;
+                }
+                currentNumber++;
+                viewModel.TextBoxValue = currentNumber+1;
+                currentQuestion = questions[currentNumber];
+                answers = questions[currentNumber].AnswerList;
+                //this.DataContext = currentQuestion;
+                AnswerList.ItemsSource = answers;
+                isTrueCheked = false;
+            }
+            else 
+            {
+                Warning warning = new Warning($"Ваши баллы: {currentBall}/{maxNubmer}");
+                warning.Show();
+            }
         }
 
         private void isTrueGroup_Checked(object sender, RoutedEventArgs e)

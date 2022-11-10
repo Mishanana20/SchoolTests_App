@@ -83,8 +83,13 @@ namespace Login_App
             Application.Current.Shutdown();
         }
 
-        //если поля пустые, то мессадж бокс
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void AddFiles_Click(object sender, RoutedEventArgs e)
+        {
+            DandD_AddFiles dandD_AddFiles = new DandD_AddFiles();
+            dandD_AddFiles.Show();
+        }
+            //если поля пустые, то мессадж бокс
+            private void Button_Click(object sender, RoutedEventArgs e)
         {
             if ((!string.IsNullOrEmpty(TxtPassword.Text) && TxtPassword.Text.Length > 0)
                 && (!string.IsNullOrEmpty(TxtLogin.Text) && TxtLogin.Text.Length > 0))

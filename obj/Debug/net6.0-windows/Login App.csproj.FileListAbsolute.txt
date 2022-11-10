@@ -79,3 +79,5 @@ C:\Users\Home\source\repos\WPF Application\School tests\bin\Debug\net6.0-windows
 C:\Users\Home\source\repos\WPF Application\School tests\bin\Debug\net6.0-windows\runtimes\win-x64\native\SQLite.Interop.dll
 C:\Users\Home\source\repos\WPF Application\School tests\bin\Debug\net6.0-windows\runtimes\win-x86\native\SQLite.Interop.dll
 C:\Users\Home\source\repos\WPF Application\School tests\obj\Debug\net6.0-windows\Login App.csproj.CopyComplete
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Debug\net6.0-windows\DandD_AddFiles.g.cs
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Debug\net6.0-windows\DandD_AddFiles.baml

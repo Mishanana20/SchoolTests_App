@@ -10,6 +10,9 @@
     <Compile Update="ConfirmationWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="DandD_AddFiles.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Frames\AllTests_Frame.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -28,6 +31,9 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="ConfirmationWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="DandD_AddFiles.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Frames\AllTests_Frame.xaml">

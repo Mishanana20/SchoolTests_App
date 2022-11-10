@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,19 +33,31 @@ namespace Login_App.Frames
 
         public void TestAddElements_Loaded(object sender, RoutedEventArgs e)
         {
-            TestName bio = new TestName() { Name = "First Test", Text = "Description for the Ferst Text" };
-            bio.Name = "First Test"; bio.Text = "Description for the Ferst Text";
-            testNames.Add(bio);
-            testNames.Add(new TestName { Name = "usersdata", Text = "тест с базой данных" });
-            testNames.Add(new TestName { Name = "Биология", Text = "Первый тест по биологии" });
-            testNames.Add(new TestName { Name = "География", Text = "Контрольная до 25-11-22" });
-            testNames.Add(new TestName { Name = "Математика", Text = "Тест для повторения основ" });
-            testNames.Add(new TestName { Name = "Биология", Text = "Первый тест по биологии" });
-            testNames.Add(new TestName { Name = "География", Text = "Контрольная до 25-11-22" });
-            testNames.Add(new TestName { Name = "Математика", Text = "Тест для повторения основ" });
-            testNames.Add(new TestName { Name = "usersdata", Text = "тест с базой данных" });
-            testNames.Add(new TestName { Name = "География", Text = "Контрольная до 25-11-22" });
-            testNames.Add(new TestName { Name = "Математика", Text = "Тест для повторения основ" });
+            //TestName bio = new TestName() { Name = "First Test", Text = "Description for the Ferst Text" };
+            //bio.Name = "First Test"; bio.Text = "Description for the Ferst Text";
+            //testNames.Add(bio);
+            //testNames.Add(new TestName { Name = "usersdata" });
+            //testNames.Add(new TestName { Name = "Биология", Text = "Первый тест по биологии" });
+            //testNames.Add(new TestName { Name = "География", Text = "Контрольная до 25-11-22" });
+            //testNames.Add(new TestName { Name = "Математика", Text = "Тест для повторения основ" });
+            //testNames.Add(new TestName { Name = "Биология", Text = "Первый тест по биологии" });
+            //testNames.Add(new TestName { Name = "География", Text = "Контрольная до 25-11-22" });
+            //testNames.Add(new TestName { Name = "Математика", Text = "Тест для повторения основ" });
+            //testNames.Add(new TestName { Name = "usersdata", Text = "тест с базой данных" });
+            //testNames.Add(new TestName { Name = "География", Text = "Контрольная до 25-11-22" });
+            //testNames.Add(new TestName { Name = "Математика", Text = "Тест для повторения основ" });
+
+
+            var dir = new DirectoryInfo($"{AppDomain.CurrentDomain.BaseDirectory}/datafolder"); // папка с файлами 
+
+            foreach (FileInfo file in dir.GetFiles())
+            {
+                if (System.IO.Path.GetExtension(System.IO.Path.GetFileName(file.FullName)) == ".db" ) 
+                { 
+                    testNames.Add(new TestName { Name = System.IO.Path.GetFileNameWithoutExtension(file.FullName) }); 
+                }  
+            }
+
             lbName.ItemsSource = testNames;
             //lbName.ItemsSource = new object[] { bio };
         }

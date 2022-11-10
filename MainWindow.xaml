@@ -39,8 +39,13 @@
                             <Image Source="/Images/Bakc.png" Width="40" Height="40"/>
                         </Button>
 
-                        <Button Style="{StaticResource buttonCircle}">
+                        <Button Style="{StaticResource buttonCircle}" Click = "AddFiles_Click">
                             <Image Source="/Images/Add.png" Width="40" Height="40"/>
+                            <Button.ToolTip>
+                                <ToolTip>
+                                    Добавить файл с тестом
+                                </ToolTip>
+                            </Button.ToolTip>
                         </Button>
 
                         <Button Style="{StaticResource buttonCircle}">

@@ -4,7 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Login_App.Frames"
-      xmlns:model ="clr-namespace:Login_App.model"
+      xmlns:model ="clr-namespace:Login_App.model" d:DataContext="{d:DesignInstance Type=model:ViewModel}"
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="650"
       Title="Test" Name="testFrame">
@@ -18,7 +18,7 @@
             </Border.Background>
 
             <StackPanel HorizontalAlignment="Stretch"  Margin="0 0 15 0">
-               
+                <TextBlock x:Name="numberOfQuestion"  Text="{Binding TextBoxValue, Mode=OneWay}"></TextBlock>
                 <ScrollViewer Name="scroll" CanContentScroll="True"  
                               Height="{Binding RelativeSource={RelativeSource FindAncestor, 
                                 AncestorType={x:Type Grid}},Path=ActualHeight}"
