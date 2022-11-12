@@ -23,7 +23,7 @@ namespace Login_App.Frames
     public partial class Test : Page
     {
         List<Question> questions = new List<Question>();
-        Question currentQuestion;
+        ViewModel currentQuestion;
         List<Answer> answers = new List<Answer>();
         bool isTrueCheked = false;
         string dataBaseName = "usersdata";
@@ -39,9 +39,12 @@ namespace Login_App.Frames
             dataBaseName = databaseName;
             questions = Connection.TestConnectionToDatabase(dataBaseName);
             maxNubmer = questions.Count();
-            currentQuestion = questions[currentNumber];
+            
             answers = questions[currentNumber].AnswerList;
             this.DataContext = viewModel;
+            viewModel.Question  = questions[currentNumber];
+            viewModel.CurrentNumberQuestion = 1;
+            viewModel.MaxNumberQuestion = maxNubmer;
             InitializeComponent();
             Loaded += TestAddAnswers_Loaded;
 
@@ -62,8 +65,8 @@ namespace Login_App.Frames
                     currentBall++;
                 }
                 currentNumber++;
-                viewModel.TextBoxValue = currentNumber+1;
-                currentQuestion = questions[currentNumber];
+                viewModel.CurrentNumberQuestion = currentNumber+1;
+                viewModel.Question = questions[currentNumber];
                 answers = questions[currentNumber].AnswerList;
                 //this.DataContext = currentQuestion;
                 AnswerList.ItemsSource = answers;
@@ -82,6 +85,9 @@ namespace Login_App.Frames
             RadioButton pressed = (RadioButton)sender;
             isTrueCheked = answer.IsTrue;
         }
+
+
+      
     }
 
 

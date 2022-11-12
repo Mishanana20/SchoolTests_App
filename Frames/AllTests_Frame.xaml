@@ -19,22 +19,27 @@
 
 
             <StackPanel  Height="Auto"  Width="Auto" HorizontalAlignment="Stretch">
+                <TextBlock x:Name="numberOfQuestion"  
+                           Style="{StaticResource titleText}">
+                    <Run Text="Выберите тест, чтобы начать:"/>
+                </TextBlock>
                 <ScrollViewer Name="scroll" CanContentScroll="True" 
                                 
                               Height="{Binding RelativeSource={RelativeSource FindAncestor, 
-                                AncestorType={x:Type StackPanel}},Path=ActualHeight}"
+                                AncestorType={x:Type Grid}},Path=ActualHeight}"
                               VerticalScrollBarVisibility="Hidden">
+                    <Grid Margin="0 0 10 50">
                     <ItemsControl x:Name="lbName">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
-                                <Border BorderThickness="1" BorderBrush="#ffffff" Margin="20,15" CornerRadius="7">
+                                <Border BorderThickness="1" BorderBrush="#ffffff" Margin="30 30 50 15" CornerRadius="7">
                                     <Grid Margin="7 9">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="50"/>
-                                            <RowDefinition Height="30"/>
+                                            <RowDefinition Height="25"/>
                                             <RowDefinition Height="60"/>
                                         </Grid.RowDefinitions>
 
@@ -53,7 +58,7 @@
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
-                    
+                    </Grid>
                 </ScrollViewer>
             </StackPanel>
         </Border>

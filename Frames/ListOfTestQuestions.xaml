@@ -1,0 +1,65 @@
+﻿<Page x:Class="Login_App.Frames.ListOfTestQuestions"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Login_App.Frames"
+      xmlns:model ="clr-namespace:Login_App.model" d:DataContext="{d:DesignInstance Type=model:ViewModel}"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="650"
+      Title="ListOfTestQuestions">
+
+    <Grid>
+
+        <Border CornerRadius="20 20 20 0">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#3AADA1" Offset="0"/>
+                    <GradientStop Color="#3AADA1" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+
+            <StackPanel HorizontalAlignment="Stretch"  Margin="0 10 15 0">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock x:Name="numberOfQuestion"  
+                           Style="{StaticResource titleText}">
+                    <Run Text="Список вопросов"/>
+                    </TextBlock>
+
+
+                </StackPanel>
+
+                <ScrollViewer Name="scroll" CanContentScroll="True"  
+                              Height="{Binding RelativeSource={RelativeSource FindAncestor, 
+                                AncestorType={x:Type Grid}},Path=ActualHeight}"
+                              VerticalScrollBarVisibility="Hidden">
+                    <Grid   Height="Auto"  Width="Auto" Margin="0 0 0 20">
+                        
+                        <ItemsControl x:Name="AnswerList" Grid.Row="1">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border BorderThickness="1" BorderBrush="#ffffff" Margin="20,30, 20, 0" CornerRadius="7">
+                                        <Grid Margin="7 9">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="50"/>
+                                            </Grid.RowDefinitions>
+                                            <TextBlock x:Name="TextLogin" Text="{Binding QuestionText}" 
+                                 Style="{StaticResource HintText}" FontSize="22"/>
+
+                                            <TextBox x:Name="TxtLogin" 
+                                 Style="{StaticResource textBox}"/>
+                                        </Grid>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </Grid>
+                </ScrollViewer>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>

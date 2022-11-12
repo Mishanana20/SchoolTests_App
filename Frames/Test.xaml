@@ -9,6 +9,7 @@
       d:DesignHeight="600" d:DesignWidth="650"
       Title="Test" Name="testFrame">
     <Grid>
+        
         <Border CornerRadius="20 20 20 0">
             <Border.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
@@ -17,8 +18,18 @@
                 </LinearGradientBrush>
             </Border.Background>
 
-            <StackPanel HorizontalAlignment="Stretch"  Margin="0 0 15 0">
-                <TextBlock x:Name="numberOfQuestion"  Text="{Binding TextBoxValue, Mode=OneWay}"></TextBlock>
+            <StackPanel HorizontalAlignment="Stretch"  Margin="0 10 15 0">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock x:Name="numberOfQuestion"  
+                           Style="{StaticResource titleText}">
+                    <Run Text="{Binding CurrentNumberQuestion, Mode=OneWay}"/>
+                    <Run Text="/"/>
+                    <Run Text="{Binding MaxNumberQuestion}"/>
+                    </TextBlock>
+                    
+                    
+                </StackPanel>
+               
                 <ScrollViewer Name="scroll" CanContentScroll="True"  
                               Height="{Binding RelativeSource={RelativeSource FindAncestor, 
                                 AncestorType={x:Type Grid}},Path=ActualHeight}"
@@ -40,7 +51,7 @@
                         </Grid.RowDefinitions>
 
 
-                        <TextBlock x:Name="TextLoginS" Text="{Binding QuestionText}" 
+                        <TextBlock x:Name="TextLoginS" Text="{Binding Question.QuestionText}" 
                                  Style="{StaticResource HintText}" FontSize="22"/>
 
                         <TextBox x:Name="TxtLoginS" 

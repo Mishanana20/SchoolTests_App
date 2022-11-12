@@ -78,6 +78,7 @@ namespace Login_App
                 this.DragMove();
             }
         }
+
         private void Image_MouseUp(object sender, MouseButtonEventArgs e)
         {
             Application.Current.Shutdown();

@@ -55,11 +55,23 @@ namespace Login_App
 
         private void ButtonFrameAllTests_Click(object sender, RoutedEventArgs e)
         {
-            CurFrame.Navigate(new Frames.AllTests_Frame());        }
+            CurFrame.Navigate(new Frames.AllTests_Frame());        
+        }
 
         private void ButtonOpenTest_Click(object sender, RoutedEventArgs e)
         {
-            CurFrame.Navigate(new Frames.Test("usersdata"));
+            CurFrame.Navigate(new Frames.ListOfQuestions());
         }
+
+        //private void ButtonOpenTest_Click(object sender, RoutedEventArgs e)
+        //{
+        //    CurFrame.Navigate(new Frames.Test("usersdata"));
+        //}
+
+        private void Image_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }

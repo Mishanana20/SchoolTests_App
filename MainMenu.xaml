@@ -27,6 +27,9 @@
         </ControlTemplate>
     </Window.Resources>
     <Grid>
+        <Image Source="/Images/Close.png"  Panel.ZIndex="2" 
+                    MouseUp="Image_MouseUp"  Style="{StaticResource ImgClose}"  Margin="0 15 15 0"
+                           HorizontalAlignment="Right"/>
         <Border CornerRadius="20 20 20 20"  MouseDown="Border_MouseDown">
             <Border.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">

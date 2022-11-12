@@ -81,3 +81,7 @@ C:\Users\Home\source\repos\WPF Application\School tests\bin\Debug\net6.0-windows
 C:\Users\Home\source\repos\WPF Application\School tests\obj\Debug\net6.0-windows\Login App.csproj.CopyComplete
 C:\Users\Home\source\repos\WPF Application\School tests\obj\Debug\net6.0-windows\DandD_AddFiles.g.cs
 C:\Users\Home\source\repos\WPF Application\School tests\obj\Debug\net6.0-windows\DandD_AddFiles.baml
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Debug\net6.0-windows\Frames\ListOfQuestions.g.cs
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Debug\net6.0-windows\Frames\ListOfQuestions.baml
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Debug\net6.0-windows\Frames\ListOfTestQuestions.g.cs
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Debug\net6.0-windows\Frames\ListOfTestQuestions.baml

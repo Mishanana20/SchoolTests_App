@@ -16,6 +16,12 @@
     <Compile Update="Frames\AllTests_Frame.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Frames\ListOfQuestions.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Frames\ListOfTestQuestions.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Frames\StartFrame.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -37,6 +43,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Frames\AllTests_Frame.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Frames\ListOfQuestions.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Frames\ListOfTestQuestions.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Frames\StartFrame.xaml">

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\Home\source\repos\WPF Application\School tests\App.xaml
-81423197226
+10-1147179490
 
-151470774313
+171901299161
 199-1742777613
-ConfirmationWindow.xaml;DandD_AddFiles.xaml;Frames\AllTests_Frame.xaml;Frames\StartFrame.xaml;Frames\Test.xaml;MainMenu.xaml;MainWindow.xaml;Warning.xaml;
+ConfirmationWindow.xaml;DandD_AddFiles.xaml;Frames\AllTests_Frame.xaml;Frames\ListOfQuestions.xaml;Frames\ListOfTestQuestions.xaml;Frames\StartFrame.xaml;Frames\Test.xaml;MainMenu.xaml;MainWindow.xaml;Warning.xaml;
 images\loadscreen.jpg
 False
 
