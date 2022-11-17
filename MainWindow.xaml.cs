@@ -9,8 +9,22 @@ namespace Login_App
     {
         public MainWindow()
         {
+            
             InitializeComponent();
+            CreateStartDirectory();
             ReadNameFromFile();
+        }
+
+        private void CreateStartDirectory()
+        {
+            string currentPath = Directory.GetCurrentDirectory();
+            if (!Directory.Exists(System.IO.Path.Combine(currentPath, "Datafolder")))
+                Directory.CreateDirectory(System.IO.Path.Combine(currentPath, "Datafolder"));
+            currentPath = System.IO.Path.Combine(currentPath, "Datafolder");
+            if (!File.Exists(System.IO.Path.Combine(currentPath, "username.txt")))
+            {
+                File.Create(System.IO.Path.Combine(currentPath, "username.txt"));
+            }
         }
 
         private void ReadNameFromFile()
@@ -101,14 +115,12 @@ namespace Login_App
 
                 currentPath = System.IO.Path.Combine(currentPath, "Datafolder");
                
-                    using (StreamWriter writer = new StreamWriter(System.IO.Path.Combine(currentPath, "username.txt"), false))
-                    {
-                        writer.WriteLine(TxtLogin.Text);
-                        writer.WriteLine(TxtPassword.Text);
-                        writer.Close();
-                    }
-                
-
+                using (StreamWriter writer = new StreamWriter(System.IO.Path.Combine(currentPath, "username.txt"), false))
+                {
+                    writer.WriteLine(TxtLogin.Text);
+                    writer.WriteLine(TxtPassword.Text);
+                    writer.Close();
+                }
                 this.Hide();
                 MainMenu taskWindow = new MainMenu();
                 taskWindow.Show();

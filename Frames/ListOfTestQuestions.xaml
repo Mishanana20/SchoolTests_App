@@ -33,7 +33,7 @@
                               Height="{Binding RelativeSource={RelativeSource FindAncestor, 
                                 AncestorType={x:Type Grid}},Path=ActualHeight}"
                               VerticalScrollBarVisibility="Hidden">
-                    <Grid   Height="Auto"  Width="Auto" Margin="0 0 0 20">
+                    <Grid   Height="Auto"  Width="Auto" Margin="0 0 0 100">
                         
                         <ItemsControl x:Name="AnswerList" Grid.Row="1">
                             <ItemsControl.ItemTemplate>
@@ -45,10 +45,11 @@
                                                 <ColumnDefinition Width="*"/>
                                             </Grid.ColumnDefinitions>
                                             <Grid.RowDefinitions>
-                                                <RowDefinition Height="50"/>
+                                                <RowDefinition Height="*" MinHeight="50"/>
                                             </Grid.RowDefinitions>
                                             <TextBlock x:Name="TextLogin" Text="{Binding QuestionText}" 
-                                 Style="{StaticResource HintText}" FontSize="22"/>
+                                 Style="{StaticResource HintText}" FontSize="22"
+                                                       TextWrapping="Wrap"/>
 
                                             <TextBox x:Name="TxtLogin" 
                                  Style="{StaticResource textBox}"/>

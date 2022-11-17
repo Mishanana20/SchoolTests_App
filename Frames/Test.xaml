@@ -34,32 +34,29 @@
                               Height="{Binding RelativeSource={RelativeSource FindAncestor, 
                                 AncestorType={x:Type Grid}},Path=ActualHeight}"
                               VerticalScrollBarVisibility="Hidden">
-                    <Grid   Height="Auto"  Width="Auto" Margin="0 0 0 20">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="150"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
-                    <Border BorderThickness="1" BorderBrush="#ffffff" Margin="20,25" CornerRadius="7">
-                    <Grid Margin="7 9">
+                    <Grid   Height="Auto"  Width="Auto" Margin="0 0 0 100">
+                        <StackPanel>
+                        <Border x:Name="QuestionBorder" BorderThickness="1" BorderBrush="#ffffff" Margin="20,30, 20, 0" CornerRadius="7">
+                    <Grid x:Name="GridQu" Margin="7 9">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="100"/>
+                                    <RowDefinition Height="*" MinHeight="50"/>
                         </Grid.RowDefinitions>
 
 
                         <TextBlock x:Name="TextLoginS" Text="{Binding Question.QuestionText}" 
-                                 Style="{StaticResource HintText}" FontSize="22"/>
+                                 Style="{StaticResource HintText}" FontSize="22"
+                                   TextWrapping="Wrap" />
 
                         <TextBox x:Name="TxtLoginS" 
                                  Style="{StaticResource textBox}"/>
                     </Grid>
                 </Border>
                 
-                    <ItemsControl x:Name="AnswerList" Grid.Row="1">
+                    <ItemsControl x:Name="AnswerList" >
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <Border BorderThickness="1" BorderBrush="#ffffff" Margin="20,30, 20, 0" CornerRadius="7">
@@ -69,7 +66,7 @@
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
                                         <Grid.RowDefinitions>
-                                            <RowDefinition Height="50"/>
+                                            <RowDefinition Height="*" MinHeight="50"/>
                                         </Grid.RowDefinitions>
 
 
@@ -77,7 +74,8 @@
                                                          IsChecked="False" Grid.Row="0" Tag="{Binding}"
                                                          Checked="isTrueGroup_Checked"/>
                                             <TextBlock x:Name="TextLogin" Text="{Binding AnswerText}" 
-                                 Style="{StaticResource HintText}" FontSize="22"/>
+                                 Style="{StaticResource HintText}" FontSize="22"
+                                                       TextWrapping="Wrap"/>
 
                                         <TextBox x:Name="TxtLogin" 
                                  Style="{StaticResource textBox}"/>
@@ -86,11 +84,12 @@
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
-                        <Button Style="{StaticResource button}" Content="Следующий" Grid.Row="2" 
+                        <Button Style="{StaticResource button}" Content="Следующий" 
                                                Click="NextQuestion_Click" Tag="{Binding}" HorizontalAlignment="Right"
                                                 VerticalAlignment="Bottom" FontSize ="17"
                                 Margin="0 20 10 0"  
                                 Width="135"/>
+                        </StackPanel>
                     </Grid>
                 </ScrollViewer>
             </StackPanel>

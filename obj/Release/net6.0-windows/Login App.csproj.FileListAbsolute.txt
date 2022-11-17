@@ -1,0 +1,65 @@
+C:\Users\Home\source\repos\WPF Application\School tests\bin\Release\net6.0-windows\Login App.exe
+C:\Users\Home\source\repos\WPF Application\School tests\bin\Release\net6.0-windows\Login App.deps.json
+C:\Users\Home\source\repos\WPF Application\School tests\bin\Release\net6.0-windows\Login App.runtimeconfig.json
+C:\Users\Home\source\repos\WPF Application\School tests\bin\Release\net6.0-windows\Login App.dll
+C:\Users\Home\source\repos\WPF Application\School tests\bin\Release\net6.0-windows\Login App.pdb
+C:\Users\Home\source\repos\WPF Application\School tests\bin\Release\net6.0-windows\Microsoft.Data.Sqlite.dll
+C:\Users\Home\source\repos\WPF Application\School tests\bin\Release\net6.0-windows\SQLitePCLRaw.batteries_v2.dll
+C:\Users\Home\source\repos\WPF Application\School tests\bin\Release\net6.0-windows\SQLitePCLRaw.core.dll
+C:\Users\Home\source\repos\WPF Application\School tests\bin\Release\net6.0-windows\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\Home\source\repos\WPF Application\School tests\bin\Release\net6.0-windows\System.Data.SQLite.dll
+C:\Users\Home\source\repos\WPF Application\School tests\bin\Release\net6.0-windows\runtimes\alpine-x64\native\libe_sqlite3.so
+C:\Users\Home\source\repos\WPF Application\School tests\bin\Release\net6.0-windows\runtimes\linux-arm\native\libe_sqlite3.so
+C:\Users\Home\source\repos\WPF Application\School tests\bin\Release\net6.0-windows\runtimes\linux-arm64\native\libe_sqlite3.so
+C:\Users\Home\source\repos\WPF Application\School tests\bin\Release\net6.0-windows\runtimes\linux-armel\native\libe_sqlite3.so
+C:\Users\Home\source\repos\WPF Application\School tests\bin\Release\net6.0-windows\runtimes\linux-mips64\native\libe_sqlite3.so
+C:\Users\Home\source\repos\WPF Application\School tests\bin\Release\net6.0-windows\runtimes\linux-musl-x64\native\libe_sqlite3.so
+C:\Users\Home\source\repos\WPF Application\School tests\bin\Release\net6.0-windows\runtimes\linux-s390x\native\libe_sqlite3.so
+C:\Users\Home\source\repos\WPF Application\School tests\bin\Release\net6.0-windows\runtimes\linux-x64\native\libe_sqlite3.so
+C:\Users\Home\source\repos\WPF Application\School tests\bin\Release\net6.0-windows\runtimes\linux-x86\native\libe_sqlite3.so
+C:\Users\Home\source\repos\WPF Application\School tests\bin\Release\net6.0-windows\runtimes\osx-arm64\native\libe_sqlite3.dylib
+C:\Users\Home\source\repos\WPF Application\School tests\bin\Release\net6.0-windows\runtimes\osx-x64\native\libe_sqlite3.dylib
+C:\Users\Home\source\repos\WPF Application\School tests\bin\Release\net6.0-windows\runtimes\win-arm\native\e_sqlite3.dll
+C:\Users\Home\source\repos\WPF Application\School tests\bin\Release\net6.0-windows\runtimes\win-arm64\native\e_sqlite3.dll
+C:\Users\Home\source\repos\WPF Application\School tests\bin\Release\net6.0-windows\runtimes\win-x64\native\e_sqlite3.dll
+C:\Users\Home\source\repos\WPF Application\School tests\bin\Release\net6.0-windows\runtimes\win-x86\native\e_sqlite3.dll
+C:\Users\Home\source\repos\WPF Application\School tests\bin\Release\net6.0-windows\runtimes\linux-x64\native\SQLite.Interop.dll
+C:\Users\Home\source\repos\WPF Application\School tests\bin\Release\net6.0-windows\runtimes\osx-x64\native\SQLite.Interop.dll
+C:\Users\Home\source\repos\WPF Application\School tests\bin\Release\net6.0-windows\runtimes\win-x64\native\SQLite.Interop.dll
+C:\Users\Home\source\repos\WPF Application\School tests\bin\Release\net6.0-windows\runtimes\win-x86\native\SQLite.Interop.dll
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Release\net6.0-windows\Login App.csproj.AssemblyReference.cache
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Release\net6.0-windows\ConfirmationWindow.g.cs
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Release\net6.0-windows\DandD_AddFiles.g.cs
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Release\net6.0-windows\Frames\AllTests_Frame.g.cs
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Release\net6.0-windows\Frames\ListOfQuestions.g.cs
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Release\net6.0-windows\Frames\ListOfTestQuestions.g.cs
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Release\net6.0-windows\Frames\StartFrame.g.cs
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Release\net6.0-windows\Frames\Test.g.cs
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Release\net6.0-windows\MainMenu.g.cs
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Release\net6.0-windows\MainWindow.g.cs
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Release\net6.0-windows\Warning.g.cs
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Release\net6.0-windows\App.g.cs
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Release\net6.0-windows\Login App_MarkupCompile.cache
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Release\net6.0-windows\Login App_MarkupCompile.lref
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Release\net6.0-windows\App.baml
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Release\net6.0-windows\ConfirmationWindow.baml
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Release\net6.0-windows\DandD_AddFiles.baml
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Release\net6.0-windows\Frames\AllTests_Frame.baml
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Release\net6.0-windows\Frames\ListOfQuestions.baml
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Release\net6.0-windows\Frames\ListOfTestQuestions.baml
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Release\net6.0-windows\Frames\StartFrame.baml
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Release\net6.0-windows\Frames\Test.baml
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Release\net6.0-windows\MainMenu.baml
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Release\net6.0-windows\MainWindow.baml
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Release\net6.0-windows\Warning.baml
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Release\net6.0-windows\Login App.g.resources
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Release\net6.0-windows\Login App.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Release\net6.0-windows\Login App.AssemblyInfoInputs.cache
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Release\net6.0-windows\Login App.AssemblyInfo.cs
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Release\net6.0-windows\Login App.csproj.CoreCompileInputs.cache
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Release\net6.0-windows\Login App.csproj.CopyComplete
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Release\net6.0-windows\Login App.dll
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Release\net6.0-windows\refint\Login App.dll
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Release\net6.0-windows\Login App.pdb
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Release\net6.0-windows\Login App.genruntimeconfig.cache
+C:\Users\Home\source\repos\WPF Application\School tests\obj\Release\net6.0-windows\ref\Login App.dll
